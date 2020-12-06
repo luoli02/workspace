@@ -38,7 +38,7 @@ public class CallableTest {
             })).start();
         }
         //等待值为0进行往下执行
-        //countDownLatch.await();
+        countDownLatch.await();
 
         System.out.println("全部执行完成");
 

@@ -31,6 +31,7 @@ public class TestController {
 
     @GetMapping("add")
     public String add() {
+        Collections.synchronizedList(new ArrayList<>());
         list.add(System.currentTimeMillis() + "");
         return "ok";
     }
@@ -85,6 +86,7 @@ public class TestController {
          * 可以安全的删除 2
          */
 //        list.removeIf(x -> x.equals("b"));
+
 //        list.stream().forEach(x -> {
 //            if (x.equals("b")) {
 //                list.remove(x);
