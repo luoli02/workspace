@@ -23,7 +23,7 @@ public class RedissonTest {
     public int get() throws InterruptedException {
         RLock lock = Redisson.create().getLock("aa");
         lock.lock();
-        lock.tryLock(2, 15, TimeUnit.MILLISECONDS);
+        //lock.tryLock(2, 15, TimeUnit.MILLISECONDS);//会出现异常
         try {
             if (i > 0) {
                 TimeUnit.MILLISECONDS.sleep(10);
