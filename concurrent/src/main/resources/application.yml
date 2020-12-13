@@ -3,3 +3,31 @@ spring:
     host: 127.0.0.1
     database: 0
     port: 6379
+
+#rocketmq:
+#  producer:
+#    producerId: GID_001 #生产者id(旧版本是生产者id，新版本是groupid)，替换成自己的
+#    msgTopic: luoli-Topic #生产主题，替换成自己的
+#    accessKey: LTAI4GJcGuu2J6jKUvL9ijim  #连接通道，替换成自己的
+#    secretKey: fsabNFCULydgaYQFGOnnuqe0jswXD5  #连接秘钥，替换成自己的
+#    NAMESRV_ADDR: http://MQ_INST_1186863933821322_BXXQNutg.cn-shenzhen.mq-internal.aliyuncs.com:8080
+#    INSTANCE_ID: MQ_INST_1186863933821322_BXXQNutg
+cos:
+  secretId: AKID9rMb8udkoelfMKkjlFwxmYGuJrmfFOQD
+  secretKey: 93pZNh6GFCsYo5QXQ5WioU3jANLIzVbn
+  durationSeconds: 1800
+  bucket: tarvel-1256213556
+  region: ap-chengdu
+  allowPrefix: '*'
+  path: https://tarvel-1256213556.cos.ap-chengdu.myqcloud.com
+  prefix: scenicspots
+
+rocketmq:
+  producer:
+    producerId: GID_001 #生产者id(旧版本是生产者id，新版本是groupid)，替换成自己的
+    msgTopic: luoli-topic2 #生产主题，替换成自己的
+    accessKey: LTAI4GJcGuu2J6jKUvL9ijim  #连接通道，替换成自己的
+    secretKey: fsabNFCULydgaYQFGOnnuqe0jswXD5  #连接秘钥，替换成自己的
+    NAMESRV_ADDR: http://MQ_INST_1186863933821322_BXaPzrkg.mq-internet-access.mq-internet.aliyuncs.com:80
+#    INSTANCE_ID: MQ_INST_1186863933821322_BXaPzrkg
+

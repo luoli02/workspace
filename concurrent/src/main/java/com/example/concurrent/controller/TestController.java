@@ -3,7 +3,9 @@ package com.example.concurrent.controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.*;
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
@@ -31,9 +33,16 @@ public class TestController {
 
     @GetMapping("add")
     public String add() {
-        Collections.synchronizedList(new ArrayList<>());
-        list.add(System.currentTimeMillis() + "");
-        return "ok";
+        synchronized (this) {
+
+            synchronized (this) {//sata + 2
+                Collections.synchronizedList(new ArrayList<>());
+                list.add(System.currentTimeMillis() + "");
+                return "ok";
+            }
+            //sata -1
+        }
+        //sata 0
     }
 
     @GetMapping("get")
