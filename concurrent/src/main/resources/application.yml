@@ -11,21 +11,21 @@ spring:
         server-addr: 127.0.0.1:8848
 
 cos:
-  secretId: AKIDqlYlkVQZsv1iJgJfRzHceYGjuRlsskpS
-  secretKey: C9qLK8gzJekgJfLlwBKEwN7k7ylJabrt
+  secretId: 11111111111111
+  secretKey: 111111111111
   durationSeconds: 1800
-  bucket: luolibucket-1300744339
-  region: ap-guangzhou
+  bucket: 1111111111
+  region: 111
   allowPrefix: '*'
-  path: https://luolibucket-1300744339.cos.ap-guangzhou.myqcloud.com
-  prefix: scenicspots
+  path: 1111
+  prefix: 11
 
 rocketmq:
-  accessKey: LTAI4GJcGuu2J6jKUvL9ijim
-  secretKey: fsabNFCULydgaYQFGOnnuqe0jswXD5
-  nameSrvAddr: http://MQ_INST_1186863933821322_BXaPzrkg.mq-internet-access.mq-internet.aliyuncs.com:80
-  topic: luoli-topic2
-  groupId: GID_002
+  accessKey: 111
+  secretKey: 11
+  nameSrvAddr: 1111
+  topic: 111
+  groupId: 111
   tag: '*'
 
 wx:
