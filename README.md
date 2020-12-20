@@ -47,3 +47,24 @@ semaphore.acquire();
 semaphore.release();
 ```
 
+- CAS
+```javascript
+AtomicInteger atomicInteger = new AtomicInteger(2020);
+CAS自旋锁: expect值如果和当前值相同就进行updaye,否则一直进行循环
+ABA问题(狸猫换太子): 
+使用AtomicStampedReference带版本号
+初始值：initialRef = "1"  初始版本号：1
+新值和初始值相同进行跟新，且版本号进行加1
+AtomicStampedReference<String> atomicStampedReference = new AtomicStampedReference("1", 1);
+atomicStampedReference.compareAndSet("1", "2", atomicStampedReference.getStamp(),
+        atomicStampedReference.getStamp() + 1);
+String reference = atomicStampedReference.getReference();
+System.out.println("新值" + reference);
+
+
+```
+
+RocketMq
+---
+- 发送消息出现ONSClientException异常时有可能是网络的问题，可以尝试切换网络环境重新发送消息。
+

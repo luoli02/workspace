@@ -1,33 +1,40 @@
 spring:
+  application:
+    name: luoli-server
   redis:
     host: 127.0.0.1
     database: 0
     port: 6379
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
 
-#rocketmq:
-#  producer:
-#    producerId: GID_001 #生产者id(旧版本是生产者id，新版本是groupid)，替换成自己的
-#    msgTopic: luoli-Topic #生产主题，替换成自己的
-#    accessKey: LTAI4GJcGuu2J6jKUvL9ijim  #连接通道，替换成自己的
-#    secretKey: fsabNFCULydgaYQFGOnnuqe0jswXD5  #连接秘钥，替换成自己的
-#    NAMESRV_ADDR: http://MQ_INST_1186863933821322_BXXQNutg.cn-shenzhen.mq-internal.aliyuncs.com:8080
-#    INSTANCE_ID: MQ_INST_1186863933821322_BXXQNutg
 cos:
-  secretId: AKID9rMb8udkoelfMKkjlFwxmYGuJrmfFOQD
-  secretKey: 93pZNh6GFCsYo5QXQ5WioU3jANLIzVbn
+  secretId: AKIDqlYlkVQZsv1iJgJfRzHceYGjuRlsskpS
+  secretKey: C9qLK8gzJekgJfLlwBKEwN7k7ylJabrt
   durationSeconds: 1800
-  bucket: tarvel-1256213556
-  region: ap-chengdu
+  bucket: luolibucket-1300744339
+  region: ap-guangzhou
   allowPrefix: '*'
-  path: https://tarvel-1256213556.cos.ap-chengdu.myqcloud.com
+  path: https://luolibucket-1300744339.cos.ap-guangzhou.myqcloud.com
   prefix: scenicspots
 
 rocketmq:
-  producer:
-    producerId: GID_001 #生产者id(旧版本是生产者id，新版本是groupid)，替换成自己的
-    msgTopic: luoli-topic2 #生产主题，替换成自己的
-    accessKey: LTAI4GJcGuu2J6jKUvL9ijim  #连接通道，替换成自己的
-    secretKey: fsabNFCULydgaYQFGOnnuqe0jswXD5  #连接秘钥，替换成自己的
-    NAMESRV_ADDR: http://MQ_INST_1186863933821322_BXaPzrkg.mq-internet-access.mq-internet.aliyuncs.com:80
-#    INSTANCE_ID: MQ_INST_1186863933821322_BXaPzrkg
+  accessKey: LTAI4GJcGuu2J6jKUvL9ijim
+  secretKey: fsabNFCULydgaYQFGOnnuqe0jswXD5
+  nameSrvAddr: http://MQ_INST_1186863933821322_BXaPzrkg.mq-internet-access.mq-internet.aliyuncs.com:80
+  topic: luoli-topic2
+  groupId: GID_002
+  tag: '*'
 
+wx:
+  appid: wx5e7b6ac7acadb5a3
+  secret: 5ac0a74aba9a4eebbdea7da298a6fceb
+  tokenUrl: https://api.weixin.qq.com/cgi-bin/token
+  codeUrl: https://api.weixin.qq.com/cgi-bin/wxaapp/createwxaqrcode
+
+
+hl:
+  error:
+    code: [3,003,1001,1002,1003,1008]

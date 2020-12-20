@@ -1,13 +1,16 @@
 package com.example.concurrent.sync;
 
-import com.qcloud.cos.utils.Md5Utils;
-import org.springframework.util.CollectionUtils;
-import sun.misc.Unsafe;
 
+
+import org.apache.commons.codec.binary.Base64;
+import org.springframework.util.CollectionUtils;
 import java.lang.reflect.Field;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -19,16 +22,19 @@ import java.util.stream.LongStream;
  * @date 2020/12/5 14:17
  */
 public class SyncTest {
-    public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException {
-//        Field field = Unsafe.class.getDeclaredField("theUnsafe");
-//        field.setAccessible(true);
-//        Unsafe unsafe = (Unsafe) field.get(null);
-//        Student student = new Student();
-//        Class<? extends Student> aClass = student.getClass();
-//        Field name = aClass.getDeclaredField("name");
-//        long l = unsafe.objectFieldOffset(name);
-//        unsafe.putObject(student,l,"luo");
-//        System.out.println();
+    public static void main(String[] args) throws Exception {
+
+        try {
+            int i = 1/0;
+        }catch (Exception e){
+           throw new Exception("异常");
+        }
+        System.out.println(111);
+
+//        String md5str = DigestUtils.md5Hex("wx5e7b6ac7acadb5a3");
+//        System.out.println("MD52加密后的字符串为:" + md5str + "\t长度：" + md5str.length());
+
+
 //        ThreadLocal<DateFormat> threadLocal = new ThreadLocal<DateFormat>(){
 //            @Override
 //            protected DateFormat initialValue() {
@@ -50,6 +56,3 @@ public class SyncTest {
 
 }
 
-class Student{
-    private String name = "1";
-}
