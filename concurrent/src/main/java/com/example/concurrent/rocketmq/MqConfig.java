@@ -16,6 +16,7 @@ public class MqConfig {
     private String topic;
     private String groupId;
     private String tag;
+
 //    private String orderTopic;
 //    private String orderGroupId;
 //    private String orderTag;
