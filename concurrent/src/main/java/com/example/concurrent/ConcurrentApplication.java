@@ -7,6 +7,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 /**
  * @author luoli
  */
+
 @SpringBootApplication
 @EnableDiscoveryClient
 public class ConcurrentApplication {
